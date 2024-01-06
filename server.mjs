@@ -43,10 +43,6 @@ app.post('/user123', (req, res) => {
     }
     userData.push(obj1);
   }
-  // Adding CORS headers
-  res.header('Access-Control-Allow-Origin', '*');
-  res.header('Access-Control-Allow-Methods', 'OPTIONS, POST, GET');
-  res.header('Access-Control-Allow-Headers', 'Content-Type');
   
   console.log(userData);
   res.status(201).send('user is created');
