@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- <script src="./server.mjs"></script> -->
+    <script type="module" src="app.mjs"></script>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</head>
+
+<!-- const formData = new FormData(document.getElementById('myForm'));
+// formData is now:
+// {
+//   username: "John",
+//   email: "john@example.com",
+//   // other fields
+// } -->
+
+<body>
+    <div id="one" class="flex justify-center min-h-screen items-center">
+        <form action="" id="form" class=" w-[25rem] h-full " onsubmit="return false">
+            <div id="container" class=" flex flex-col">
+                <div id="signup" class=" h-14 flex justify-center items-center">
+                    <h6 class=" text-5xl">SIGNUP</h6>
+                    
+                </div>
+                <hr><hr>
+                    
+                    <div id="email" class="p-2">
+                        <label for="mail" class="text-3xl">Email :</label><br>
+                        <input type="email" id="mail" class="h-10 w-[20rem] xx">
+                    </div>
+                    <div id="pass" class="p-2">
+                        <label for="password" class="text-3xl">Password :</label><br>
+                        <input type="password" id="password" class="h-10 w-[20rem] xx">
+                        <img src="./show-password-icon-18.jpg" alt="..." id="image">
+                    </div>
+                    <div id="btn" class="mb-10 p-2 flex justify-center">
+                        <a href="./index2.html" target="_blank"><input type="submit" id="submittt" value="submit" class="text-3xl font-serif border-2 border-black ss"></a>
+                    </div>
+
+                </div>
+        </form>
+    </div>
+</body>
+
+</html>
