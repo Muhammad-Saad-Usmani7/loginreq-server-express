@@ -49,29 +49,35 @@
 </body>
 
 <script>
-const submittt = document.getElementById("submittt");
-submittt.addEventListener("click", () => {
-  const maill = document.getElementById("maill").value;
-  const pass = document.getElementById("password").value;
-
-    axios.get('https://backend-signup-express-855686e297f6.herokuapp.com/user123')
-    .then((response) => {
-
-        let obj = response.data;
-        for(let i=0;i<obj.length;i++){
-            if(obj[i].email === maill && obj[i].password === pass){
-                 console.log(obj);
-            }else{
+    const submittt = document.getElementById("submittt");
+    submittt.addEventListener("click", () => {
+      const maill = document.getElementById("maill").value;
+      const pass = document.getElementById("password").value;
+    
+        axios.get('https://backend-signup-express-855686e297f6.herokuapp.com/user123')
+        .then((response) => {
+    
+            let obj = response.data;
+            let found = false;
+    
+            for (let i = 0; i < obj.length; i++) {
+                if (obj[i].email === maill && obj[i].password === pass) {
+                     console.log(obj);
+                     found = true;
+                     break;  // Exit the loop once a match is found
+                }
+            }
+    
+            if (!found) {
                 console.log("not found!!!");
             }
-        }
-       
-        
-    }).catch((err) => {
-        console.log(err);
+            
+        }).catch((err) => {
+            console.log(err);
+        });
+    
     });
-
-});
-</script>
+    </script>
+    
 
 </html>
