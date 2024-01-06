@@ -51,12 +51,19 @@
 <script>
 const submittt = document.getElementById("submittt");
 submittt.addEventListener("click", () => {
+  const mail = document.getElementById("mail").value;
+  const pass = document.getElementById("password").value;
 
     axios.get('https://backend-signup-express-855686e297f6.herokuapp.com/user123')
     .then((response) => {
 
         let obj = response.data;
-        console.log(obj);
+        for(let i=0;i<obj.length;i++){
+            if(obj[i].email === mail && obj[i].password === pass){
+                 console.log(obj);
+            }
+        }
+       
         
     }).catch((err) => {
         console.log(err);
