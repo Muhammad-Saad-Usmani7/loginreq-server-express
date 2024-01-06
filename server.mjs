@@ -2,12 +2,14 @@
 
 import express from "express";
 import cors from "cors";
+
+const port = process.env.PORT || 3000;
+
 const app = express();
-app.use(cors({origin : "*"}));
+app.use(cors());
 
 app.use(express.json());
-const port = process.env.PORT || 3000;
-// const port = 3000;
+
 
 let userData = [];
 let flag = false;
