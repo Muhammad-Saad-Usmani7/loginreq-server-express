@@ -28,7 +28,7 @@ submitt.addEventListener("click", () => {
   const pass = document.getElementById("password").value;
 
   const fullName = fname + " " + lname;
-  axios.post("https://login123-48b746d1d006.herokuapp.com/user123", {
+  axios.post("https://backend-signup-express-855686e297f6.herokuapp.com/user123", {
     fullName: fullName,
     email: mail,
     password: pass,
