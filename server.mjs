@@ -48,8 +48,9 @@ app.post('/user123', (req, res) => {
   
 });
 
-app.get('/user',(req,res)=>{
+app.get('/user123',(req,res)=>{
     res.send("I am home page")
+    console.log("dscsdv");
   })
 
 app.listen(port,()=>{
