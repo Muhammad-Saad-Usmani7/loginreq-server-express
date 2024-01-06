@@ -6,7 +6,7 @@ import cors from "cors";
 const port = process.env.PORT || 3000;
 
 const app = express();
-app.use(cors());
+app.use(cors({origin : "https://backend-signup-express-855686e297f6.herokuapp.com/user123"}));
 
 app.use(express.json());
 
