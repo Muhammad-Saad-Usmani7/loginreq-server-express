@@ -36,25 +36,5 @@ submitt.addEventListener("click", () => {
   });
  
 
-
   console.log(fname);
-});
-
-const submittt = document.getElementById("submittt");
-submittt.addEventListener("click", () => {
-    const fname = document.getElementById("fname").value;
-    const lname = document.getElementById("lname").value;
-    const mail = document.getElementById("mail").value;
-    const pass = document.getElementById("password").value;
-  
-    axios.get('https://backend-signup-express-855686e297f6.herokuapp.com/user123')
-    .then((response) => {
-
-        let obj = response.data;
-        console.log(obj);
-        
-    }).catch((err) => {
-        console.log(err);
-    });
-
 });
