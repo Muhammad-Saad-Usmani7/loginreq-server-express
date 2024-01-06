@@ -32,7 +32,7 @@
                     
                     <div id="email" class="p-2">
                         <label for="mail" class="text-3xl">Email :</label><br>
-                        <input type="email" id="mail" class="h-10 w-[20rem] xx">
+                        <input type="email" id="maill" class="h-10 w-[20rem] xx">
                     </div>
                     <div id="pass" class="p-2">
                         <label for="password" class="text-3xl">Password :</label><br>
@@ -51,7 +51,7 @@
 <script>
 const submittt = document.getElementById("submittt");
 submittt.addEventListener("click", () => {
-  const mail = document.getElementById("mail").value;
+  const maill = document.getElementById("maill").value;
   const pass = document.getElementById("password").value;
 
     axios.get('https://backend-signup-express-855686e297f6.herokuapp.com/user123')
@@ -59,7 +59,7 @@ submittt.addEventListener("click", () => {
 
         let obj = response.data;
         for(let i=0;i<obj.length;i++){
-            if(obj[i].email === mail && obj[i].password === pass){
+            if(obj[i].email === maill && obj[i].password === pass){
                  console.log(obj);
             }else{
                 console.log("not found!!!");
