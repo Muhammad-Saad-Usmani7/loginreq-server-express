@@ -11,7 +11,7 @@ const port = process.env.PORT || 3000;
 
 let userData = [];
 let flag = false;
-let x;
+// console.o
 app.post('/user123', (req, res) => {
   const body = req.body;
   if (!body.fullName) {
