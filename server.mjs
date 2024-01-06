@@ -49,7 +49,7 @@ app.post('/user123', (req, res) => {
 });
 
 app.get('/user123',(req,res)=>{
-    res.send("I am home page")
+    res.send("I am home page");
     console.log("dscsdv");
   })
 
