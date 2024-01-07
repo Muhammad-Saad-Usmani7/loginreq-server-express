@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <!-- <script src="./server.mjs"></script> -->
- 
+
     <link rel="stylesheet" href="style.css">
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
@@ -22,62 +22,87 @@
 
 <body>
     <div id="one" class="flex justify-center min-h-screen items-center">
-        <form action="..." id="form" class=" w-[25rem] h-full ">
+        <form action="" id="form" class=" w-[25rem] h-full ">
             <div id="container" class=" flex flex-col">
                 <div id="signup" class=" h-14 flex justify-center items-center">
                     <h6 class=" text-5xl">LOGIN</h6>
-                    
-                </div>
-                <hr><hr>
-                    
-                    <div id="email" class="p-2">
-                        <label for="mail" class="text-3xl">Email :</label><br>
-                        <input type="email" id="maill" class="h-10 w-[20rem] xx">
-                    </div>
-                    <div id="pass" class="p-2">
-                        <label for="password" class="text-3xl">Password :</label><br>
-                        <input type="password" id="password" class="h-10 w-[20rem] xx">
-                        <img src="./show-password-icon-18.jpg" alt="..." id="image">
-                    </div>
-                    <div id="btn" class="mb-10 p-2 flex justify-center">
-                        <a href="https://crud-saad.netlify.app"><input type="submit" id="submittt" value="submit" class="text-3xl font-serif border-2 border-black ss"></a>
-                    </div>
 
                 </div>
+                <hr>
+                <hr>
+
+                <div id="email" class="p-2">
+                    <label for="mail" class="text-3xl">Email :</label><br>
+                    <input type="email" id="maill" class="h-10 w-[20rem] xx">
+                </div>
+                <div id="pass" class="p-2">
+                    <label for="password" class="text-3xl">Password :</label><br>
+                    <input type="password" id="password" class="h-10 w-[20rem] xx">
+                    <img src="./show-password-icon-18.jpg" alt="..." id="image">
+                </div>
+                <div id="btn" class="mb-10 p-2 flex justify-center">
+                    <input type="submit" id="submittt" value="submit"
+                    class="text-3xl font-serif border-2 border-black ss">
+                </div>
+
+            </div>
         </form>
     </div>
 </body>
 
 <script>
-    const submittt = document.getElementById("submittt");
-    submittt.addEventListener("click", () => {
-      const maill = document.getElementById("maill").value;
-      const pass = document.getElementById("password").value;
-    
-        axios.get('https://backend-signup-express-855686e297f6.herokuapp.com/user123')
-        .then((response) => {
-    
-            let obj = response.data;
-            let found = false;
-    
-            for (let i = 0; i < obj.length; i++) {
-                if (obj[i].email === maill && obj[i].password === pass) {
-                     console.log(obj);
-                     found = true;
-                     break;  // Exit the loop once a match is found
-                }
-            }
-    
-            if (!found) {
-                console.log("not found!!!");
-            }
-            
-        }).catch((err) => {
-            console.log(err);
-        });
-    
+
+    const pass = document.getElementById("password");
+    const imagePassword = document.getElementById("image");
+    const x = "show-password-icon-18.jpg";
+    const y = "show pass.jpg";
+    imagePassword.addEventListener("click", () => {
+        const x = "show-password-icon-18.jpg";
+        const y = "show pass.jpg";
+        const z = imagePassword.src;
+        if (z.includes(x)) {
+            imagePassword.src = y;
+            pass.type = "text";
+        } else {
+            imagePassword.src = x;
+            pass.type = "password";
+        }
     });
-    </script>
-    
+
+
+
+    const submittt = document.getElementById("submittt");
+    submittt.addEventListener("click", (event) => {
+        event.preventDefault();
+        const maill = document.getElementById("maill").value;
+        const pass = document.getElementById("password").value;
+
+        axios.get('https://backend-signup-express-855686e297f6.herokuapp.com/user123')
+            .then((response) => {
+
+                let obj = response.data;
+                let found = false;
+
+                for (let i = 0; i < obj.length; i++) {
+                    if (obj[i].email === maill && obj[i].password === pass) {
+                        console.log(obj);
+                        found = true;
+                        window.location.href = "https://crud-saad.netlify.app";
+                        break;  // Exit the loop once a match is found
+                    }
+                }
+
+                if (!found) {
+                    alert("User not found!");
+                    
+                }
+
+            }).catch((err) => {
+                console.log(err);
+            });
+
+    });
+</script>
+
 
 </html>
