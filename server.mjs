@@ -55,6 +55,10 @@ app.get('/user123',(req,res)=>{
     res.send(userData);
   })
 
+app.put('/user123',(req,res)=>{
+
+})
+
 app.listen(port,()=>{
     console.log(`SayyaJinn belongs to ${port}`);
 });

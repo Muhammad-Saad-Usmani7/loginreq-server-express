@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</head>
+
+<!-- const formData = new FormData(document.getElementById('myForm'));
+// formData is now:
+// {
+//   username: "John",
+//   email: "john@example.com",
+//   // other fields
+// } -->
+
+<body>
+    <div id="one" class="flex justify-center min-h-screen items-center">
+        <form action="" id="form" class=" w-[25rem] h-full ">
+            <div id="container" class=" flex flex-col">
+                <div id="signup" class=" h-14 flex justify-center items-center">
+                    <h6 class=" text-5xl">UPDATE SIGNUP</h6>
+                    
+                </div>
+                <hr><hr>
+                    <div id="firstname" class="p-2">
+                        <label for="fname" class="text-3xl">First Name :</label><br>
+                        <input type="text" id="fname" class="h-10 w-[20rem] xx">
+                    </div>
+                    <div id="lastname" class="p-2">
+                        <label for="lname" class="text-3xl">Last Name :</label><br>
+                        <input type="text" id="lname" class="h-10 w-[20rem] xx">
+                    </div>
+                    <div id="email" class="p-2">
+                        <label for="mail" class="text-3xl">Email :</label><br>
+                        <input type="email" id="mail" class="h-10 w-[20rem] xx">
+                    </div>
+                    <div id="pass" class="p-2">
+                        <label for="password" class="text-3xl">Password :</label><br>
+                        <input type="password" id="password" class="h-10 w-[20rem] xx">
+                        <img src="./show-password-icon-18.jpg" alt="..." id="image">
+                    </div>
+                    <div id="btn" class="mb-10 p-2 flex justify-center">
+                       <input type="submit" id="submit" value="submit" class="text-3xl font-serif border-2 border-black ss">
+                    </div>
+
+                </div>
+        </form>
+    </div>
+</body>
+
+<script>
+    const pass = document.getElementById("password");
+    const imagePassword = document.getElementById("image");
+    const x = "show-password-icon-18.jpg";
+    const y = "show pass.jpg";
+    imagePassword.addEventListener("click", () => {
+        const x = "show-password-icon-18.jpg";
+        const y = "show pass.jpg";
+        const z = imagePassword.src;
+        if (z.includes(x)) {
+            imagePassword.src = y;
+            pass.type = "text";
+        } else {
+            imagePassword.src = x;
+            pass.type = "password";
+        }
+    });
+
+    
+</script>
+
+
+</html>
