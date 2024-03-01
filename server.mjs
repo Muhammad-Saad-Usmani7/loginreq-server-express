@@ -1,45 +1,64 @@
+// console.log("universe07")
+
 import express from "express";
 import cors from "cors";
 
 const port = process.env.PORT || 3000;
 
 const app = express();
-app.use(cors({
-  origin: '*',
-  methods: 'POST'
-}));
+app.use(cors());
+
 app.use(express.json());
 
-let userData = [];
 
+let userData = [];
+let flag = false;
+// console.o
 app.post('/user123', (req, res) => {
   const body = req.body;
-  // Check if all required fields are present
-  if (!body.fullName || !body.email || !body.password) {
-    res.status(400).json({
-      error: "All fields (fullName, email, password) are required."
+  if (!body.fullName) {
+    res.status(404).send({
+      message: "fullname required!",
     });
-    return; // Exit the function if any field is missing
+    if (!body.email) {
+      res.status(404).send({
+        email: "email required!",
+      });
+      if (!body.password) {
+        res.status(404).send({
+          password: "password required!",
+        });
+      } else {
+        flag = true;
+      }
+    } else {
+      flag = true;
+    }
+  } else {
+    flag = true;
   }
-
-  // If all fields are present, proceed to create the user
-  const newUser = {
-    fullName: body.fullName,
-    email: body.email,
-    password: body.password
-  };
-
-  // Push the new user to the userData array
-  userData.push(newUser);
-
+  if(flag){
+    const obj1 = {
+        fullName : body.fullName,
+        email : body.email,
+        password : body.password
+    }
+    userData.push(obj1);
+  }
+  
   console.log(userData);
-  res.status(201).send('User is created');
+  res.status(201).send('user is created');
+  
 });
 
-app.get('/user123', (req, res) => {
-  res.send(userData);
-});
+app.get('/user123',(req,res)=>{
+    res.send(userData);
+  })
 
-app.listen(port, () => {
-  console.log(`Server is running on port ${port}`);
+app.put('/user123',(req,res)=>{
+
+})
+
+app.listen(port,()=>{
+    console.log(`SayyaJinn belongs to ${port}`);
 });
