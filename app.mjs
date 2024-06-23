@@ -29,7 +29,7 @@ submitt.addEventListener("click", () => {
 
   const fullName = fname + " " + lname;
 
-  axios.post('https://backend-signup-express-855686e297f6.herokuapp.com/user123', {
+  axios.post('/user123', {
     fullName: fullName,
     email: mail,
     password: pass,
